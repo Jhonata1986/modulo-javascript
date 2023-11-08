@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="emiteAlerta()">Clique aqui</button>
+    <h1 onmouseleave="emiteError()" onmouseover="emiteError2()" onclick="alterah1()">
+        Emite erro </h1>
+    </h1>
+
+    <h2 id="titulo2" onclick="alterah1()">
+        Emite erro </h2>
+    </h2>
+
+    <h3 class="titulo3" onclick="alterah1()">
+        Emite erro </h3>
+    </h3>
+    <p>
+        
+        <input type="number" onkeyup="calculaTabuada(this.value)">
+    </p>
+    <div id="tabuada">
+    </div>
+
+    <script type="text/javascript">
+
+        const nome = "Jhonata"
+
+        const sobrenome = "Pedrozo"
+
+        console.log(nome + " " + sobrenome);
+
+        function emiteAlerta() {
+            alert('voce clicou em um botao');
+            /* console.log("a funcao emitAlerta foi acionada");
+            console.error("mensagem de erro");
+            console.warn("um erro que nao e grave");
+            console.info("mensagem de informaçao");
+            console.table([555,222,555]); */
+        }
+        const emiteError = function () {
+            console.error("Isso e uma funcao em variavel");
+        }
+
+        const emiteError2 = function () {
+            console.warn("Isso e uma funcao em variavel");
+        }
+        // Pegando elementos via JS
+
+        const alterah1 = function () {
+            const h1 = document.querySelector('h1');// elemento
+            h1.innerText = "valor alterado";
+        }
+
+        const alterah2 = function () {
+            const h2 = document.querySelector('#titulo2');//id
+            h2.innerText = "alterado para id";
+        }
+
+        const alterah3 = function () {
+            const h3 = document.querySelector('.titulo3');// class
+            h3.innerText = "alterado para class";
+        }
+
+        const calculaTabuada = function (valor) {
+            const tabuada = document.querySelector("#tabuada");
+            tabuada.innerText = "";
+            for (i = 0; i <= 10; i++) {
+                tabuada.innerHTML+= `<p>${i} x ${valor} = ${i * valor} </p>`;
+            }
+        }
+
+        
+    </script>
+
+
+
+</body>
+
+</html>
